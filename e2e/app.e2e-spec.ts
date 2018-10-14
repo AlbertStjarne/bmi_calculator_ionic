@@ -12,17 +12,15 @@ describe('App', () => {
       page.navigateTo('/');
     });
 
-    it('should have a title saying calculator', () => {
-      page.getPageOneTitleText().then(title => {
-        expect(title).toContain('calculator');
+      it('should have a title saying calculator', () => {
+        expect(page.getTitle()).toContain('Ionic App')
       });
-    });
 
-    it('fill in form', () => {
-      page.fillInForm(72, 182);
-      expect(page.results_card_header()).toContain('BMI Calulation');
-      // expect(page.results_card_content()).toContain('Gender: female, Age: 20  Result: Poor');
-      expect(page.results_card_content()).toContain('BMI: 21.74, You are Normal');
+      it('should have a button saying Calculate', () => {
+        expect(page.getPageOneButtonText()).toContain('CALCULATE')
+      });
+
+
+
+    });
   });
-  });
-});
